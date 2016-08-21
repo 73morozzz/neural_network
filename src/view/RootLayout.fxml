@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="650.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.RootLayoutContoller">
+	<!-- TODO Add Nodes -->
+	      <top>
+            <MenuBar prefHeight="32.0" prefWidth="448.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Файл">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#handleNew" text="Создать" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleOpen" text="Открыть" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSave" text="Сохранить" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSaveAs" text="Сохранить как.. " />
+                  <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Закрыть" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Обучение">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Задать параметры" />
+                        <MenuItem mnemonicParsing="false" text="Обучающая выборка" />
+                        <MenuItem mnemonicParsing="false" text="Обучение" />
+                        <MenuItem mnemonicParsing="false" text="Просмотр результатов" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Использование НС">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Тестовая выборка" />
+                     </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Справка">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text layoutX="200.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Добро пожаловать в программу  &quot;Neuralink network&quot;!">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Button layoutX="200.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleExpertSystem" text="Помочь выбрать тип НС" />
+            <Button layoutX="414.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleNeuralNetwork" text="Перейти к построению НС" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

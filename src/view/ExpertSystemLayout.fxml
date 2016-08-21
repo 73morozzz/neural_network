@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.ExpertSystemLayoutController">
+   <children>
+      <Pane fx:id="pane1" layoutX="200.0" layoutY="119.0" prefHeight="500.0" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="100.0" layoutY="100.0" text="Выберите тип решаемой задачи">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="radioButtonTask1" layoutX="100.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleRadioButton" text="классификация">
+               <toggleGroup>
+                  <ToggleGroup fx:id="toggle1" />
+               </toggleGroup>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="radioButtonTask2" layoutX="100.0" layoutY="180.0" mnemonicParsing="false" onAction="#handleRadioButton" text="кластеризация" toggleGroup="$toggle1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </RadioButton>
+            <Button layoutX="100.0" layoutY="392.0" mnemonicParsing="false" onAction="#handleResult" text="Показать результат" />
+            <RadioButton fx:id="radioButtonTask4" layoutX="100.0" layoutY="244.0" mnemonicParsing="false" onAction="#handleRadioButton" text="прогноз" toggleGroup="$toggle1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </RadioButton>
+            <RadioButton fx:id="radioButtonTask3" layoutX="100.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleRadioButton" text="апроксимация" toggleGroup="$toggle1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </RadioButton>
+            <RadioButton fx:id="radioButtonTask5" layoutX="100.0" layoutY="278.0" mnemonicParsing="false" onAction="#handleRadioButton" text="оптимизация" toggleGroup="$toggle1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </RadioButton>
+            <RadioButton fx:id="radioButtonTask7" layoutX="100.0" layoutY="344.0" mnemonicParsing="false" onAction="#handleRadioButton" text="управление" toggleGroup="$toggle1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </RadioButton>
+            <RadioButton fx:id="radioButtonTask6" layoutX="100.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleRadioButton" text="память, адресуемая по содержанию" toggleGroup="$toggle1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </RadioButton>
+         </children>
+      </Pane>
+      <Pane fx:id="pane2" layoutX="10.0" layoutY="10.0" prefHeight="500.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="label" layoutX="100.0" layoutY="100.0" text="Знаете ли Вы, по какому методу хотите обучить нейронную сеть?">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="radioButton1" layoutX="100.0" layoutY="150.0" mnemonicParsing="false" onAction="#handleRadioButton" prefHeight="52.0" prefWidth="600.0" text="Да">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <toggleGroup>
+                  <ToggleGroup fx:id="toggle2" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radioButton2" layoutX="100.0" layoutY="203.0" mnemonicParsing="false" onAction="#handleRadioButton" prefHeight="52.0" prefWidth="600.0" text="Нет" toggleGroup="$toggle2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </RadioButton>
+            <Button fx:id="next" layoutX="100.0" layoutY="266.0" mnemonicParsing="false" onAction="#handleNext" text="Далее" />
+         </children>
+      </Pane>
+      <Pane fx:id="pane3" layoutX="10.0" layoutY="10.0" prefHeight="500.0" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TextArea layoutX="100.0" layoutY="100.0" prefHeight="400.0" prefWidth="600.0" text="Справка по всем возможным типам НС" />
+         </children>
+      </Pane>
+      <Pane fx:id="pane4" layoutX="20.0" layoutY="20.0" prefHeight="556.0" prefWidth="700.0" visible="false">
+         <children>
+            <TextArea fx:id="resultArea" layoutX="100.0" layoutY="100.0" prefHeight="400.0" prefWidth="600.0" text="Результат, список подходящих НС" />
+            <Button layoutX="100.0" layoutY="517.0" mnemonicParsing="false" onAction="#handleCreateNS" text="Перейти к созданию НС" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

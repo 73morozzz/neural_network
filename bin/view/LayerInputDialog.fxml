@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LayerInputDialogController">
+   <children>
+      <Text layoutX="69.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Добавление слоя сети" wrappingWidth="165.0" />
+      <TextField fx:id="inputSize" layoutX="214.0" layoutY="38.0" prefHeight="25.0" prefWidth="76.0" />
+      <Text layoutX="34.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Размер входного вектора сети:" wrappingWidth="187.00000047683716" />
+      <Text layoutX="35.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Размер слоя:" wrappingWidth="121.00000047683716" />
+      <TextField fx:id="laySize" layoutX="138.0" layoutY="151.0" prefHeight="25.0" prefWidth="76.0" />
+      <RadioButton fx:id="tg" layoutX="39.0" layoutY="304.0" mnemonicParsing="false" text="Гиперболический тангенс">
+         <toggleGroup>
+            <ToggleGroup fx:id="LayoutType" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="sigmoid" layoutX="39.0" layoutY="275.0" mnemonicParsing="false" text="Сигмоидальная" toggleGroup="$LayoutType" />
+      <RadioButton fx:id="linear" layoutX="39.0" layoutY="248.0" mnemonicParsing="false" text="Линейная" toggleGroup="$LayoutType" />
+      <RadioButton fx:id="doorStep" layoutX="39.0" layoutY="223.0" mnemonicParsing="false" text="Пороговая" toggleGroup="$LayoutType" />
+      <Text layoutX="37.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Функция активации:" wrappingWidth="158.00000047683716" />
+      <Button layoutX="38.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleNewLayer" text="Создать слой" />
+      <Text layoutX="301.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Информация о созданных слоях:" wrappingWidth="233.00000047683716" />
+      <TextArea fx:id="createdLays" layoutX="302.0" layoutY="179.0" prefHeight="154.0" prefWidth="279.0" />
+      <Button layoutX="302.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleDeleteLayers" text="Очистить слои" />
+      <Button layoutX="488.0" layoutY="349.0" mnemonicParsing="false" onAction="#handleCreateNetwork" text="Построить НС" />
+      <TextArea blendMode="SRC_ATOP" editable="false" layoutX="302.0" layoutY="17.0" prefHeight="111.0" prefWidth="279.0" text="Введите размер входного вектора, &#10;затем введите информацию о слоях НС" />
+   </children>
+</AnchorPane>
